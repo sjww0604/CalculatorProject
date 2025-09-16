@@ -9,29 +9,29 @@ public class App {
         boolean exit = true; // exit 입력 전 값 초기화 진행, 반복문은 true일 때 실행되도록 설계
         while(exit) {
             System.out.print("첫 번째 숫자를 입력하세요 : ");
-            int FirstNum = sc.nextInt(); // 첫번째 입력값 설정
+            int firstNum = sc.nextInt(); // 첫번째 입력값 설정 -> 변수명 첫글자만 소문자로 변경
             System.out.print("두 번째 숫자를 입력하세요 : ");
-            int SecondNum = sc.nextInt(); // 두번째 입력값 설정
+            int secondNum = sc.nextInt(); // 두번째 입력값 설정
             System.out.print("사칙연산 기호를 입력하세요: ");
             char opration = sc.next().charAt(0); // 연산기호 입력 및 첫 글자만 추출
 
             int result = 0; // 계산값 저장 변수 result  설정
-            if (FirstNum > 0 && SecondNum > 0) {
+            if (firstNum > 0 && secondNum > 0) {
                 switch (opration) {
                     case '+':
-                        result = FirstNum + SecondNum;
+                        result = firstNum + secondNum;
                         System.out.println("결과: " + result);
                         break;
                     case '-':
-                        result = FirstNum - SecondNum;
+                        result = firstNum - secondNum;
                         System.out.println("결과:" + result);
                         break;
                     case '*':
-                        result = FirstNum * SecondNum;
+                        result = firstNum * secondNum;
                         System.out.println("결과:" + result);
                         break;
                     case '/':
-                        result = FirstNum / SecondNum;
+                        result = firstNum / secondNum;
                         System.out.println("결과:" + result);
                         break;
                     default:
