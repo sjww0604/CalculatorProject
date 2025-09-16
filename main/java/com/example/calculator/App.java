@@ -13,5 +13,29 @@ public class App {
         System.out.print("사칙연산 기호를 입력하세요: ");
         char opration = sc.next().charAt(0); // 연산기호 입력 및 첫 글자만 추출
 
+        int result = 0; // 계산값 저장 변수 result  설정
+        if (FirstNum > 0 && SecondNum > 0){
+            switch (opration){
+                case '+':
+                    result = FirstNum + SecondNum;
+                    System.out.println("결과: " + result);
+                    break;
+                case '-':
+                    result = FirstNum - SecondNum;
+                    System.out.println("결과:" + result);
+                    break;
+                case '*':
+                    result = FirstNum * SecondNum;
+                    System.out.println("결과:" + result);
+                    break;
+                case  '/':
+                    result = FirstNum / SecondNum;
+                    System.out.println("결과:" + result);
+                    break;
+                default:
+                    System.out.println("올바른 사칙연산 기호를 입력하세요");
+            }
+        }
+
     }
 }
