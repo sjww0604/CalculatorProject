@@ -36,6 +36,9 @@ public class App {
                     System.out.println("올바른 사칙연산 기호를 입력하세요");
             }
         }
+        else {
+            System.out.println("0 이상의 정수를 입력해주세요!"); // 0 이상의 입력값 검증 진행
+        }
 
     }
 }
