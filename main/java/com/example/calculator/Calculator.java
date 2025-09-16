@@ -4,7 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-     private List<Integer> saveList = new ArrayList<>(); // 값을 저장하는 배열형태의 컬렉션 필드 선언 및 생성
+    /* 값을 저장하는 배열형태의 컬렉션 필드 선언 및 생성
+    private 접근제한자 설정으로 외부 클래스에서 접근 불가
+     */
+     private List<Integer> saveList = new ArrayList<>();
+
+     // 게터(Getter) 메서드 설정
+    public List<Integer> getSaveList() {
+        return saveList;
+    }
+
+    // 세터(setter) 메서드 설정
+    public void setSaveList(List<Integer> saveList) {
+        this.saveList = saveList;
+    }
 
         public Integer calculate(int firstNum, int secondNum, char operation) { //계산 메서드
             if (firstNum < 0 || secondNum < 0) {
@@ -33,6 +46,8 @@ public class Calculator {
                         System.out.println("올바른 사칙연산 기호를 입력하세요.");
                         return null;
                 }
+                saveList.add(result);
                 return result;
         }
+
  }
