@@ -22,9 +22,13 @@ public class App {
                 System.out.println("결과 : " + result);
             } // 반환받은 결과값이 null 이 아닌 경우 반환된 result 값을 공유
 
+            System.out.println("=============================="); // 배열 구분선 추가
+            // 저장된 결과값을 보여주는 배열을 하단에 첨부 getter 기능을 활용
+            System.out.println("저장된 결과값: " + calculator.getSaveList());
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");
-            String choice = sc.next().toLowerCase().trim();
+
             // "exit"라는 글자를 입력받아야하는데 항상 고르게 입력 받아야 하므로 LowerCase(소문자로 치환), trim(공백 제거) 사용
+            String choice = sc.next().toLowerCase().trim();
             if (choice.equals("exit")) {
                 exit = false;
             }
