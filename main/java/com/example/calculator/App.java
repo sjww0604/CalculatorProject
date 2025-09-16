@@ -15,9 +15,9 @@ public class App {
             System.out.print("두 번째 숫자를 입력하세요 : ");
             int secondNum = sc.nextInt(); // 두번째 입력값 설정
             System.out.print("사칙연산 기호를 입력하세요: ");
-            char opration = sc.next().charAt(0); // 연산기호 입력 및 첫 글자만 추출
+            char operator = sc.next().charAt(0); // 연산기호 입력 및 첫 글자만 추출
 
-            Integer result = calculator.calculate(firstNum, secondNum, opration); // Calculator 계산 클래스 적용
+            Integer result = calculator.calculate(firstNum, secondNum, operator); // Calculator 계산 클래스 적용
             if(result != null) {
                 System.out.println("결과 : " + result);
             } // 반환받은 결과값이 null 이 아닌 경우 반환된 result 값을 공유
