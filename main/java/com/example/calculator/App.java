@@ -25,14 +25,21 @@ public class App {
             System.out.println("=============================="); // 배열 구분선 추가
             // 저장된 결과값을 보여주는 배열을 하단에 첨부 getter 기능을 활용
             System.out.println("저장된 결과값: " + calculator.getSaveList());
-            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");
+            System.out.print("명령어를 입력하세요. (del=삭제, exit=종료) : ");
 
-            // "exit"라는 글자를 입력받아야하는데 항상 고르게 입력 받아야 하므로 LowerCase(소문자로 치환), trim(공백 제거) 사용
+            // 삭제 기능 추가 및 종료 조건을 만족하기 위해 항상 입력값을 고르게 입력 받아야 하므로 LowerCase(소문자로 치환), trim(공백 제거) 사용
             String choice = sc.next().toLowerCase().trim();
-            if (choice.equals("exit")) {
+            // 조건문에 del 인 경우의 삭제 메서드 기능 추가 진행
+            if (choice.equals("del")) {
+                Integer removeResult = calculator.removeResult();
+                if (removeResult != null) {
+                    System.out.println("삭제된 값: " + removeResult);
+                } else {
+                    System.out.println("히스토리가 비어 있습니다.");
+                }
+            } else if (choice.equals("exit")) {
                 exit = false;
             }
         }
-
     }
 }

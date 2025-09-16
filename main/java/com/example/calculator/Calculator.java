@@ -14,7 +14,7 @@ public class Calculator {
         return saveList;
     }
 
-    // 세터(setter) 메서드 설정
+    // 세터(setter) 메서드 설정 (필요 시 사용 - 보편적으로는 사용하지 않음)
     public void setSaveList(List<Integer> saveList) {
         this.saveList = saveList;
     }
@@ -50,4 +50,12 @@ public class Calculator {
                 return result;
         }
 
+        // 삭제 메서드 선언 및 기능 설정 FIFO 개념의 문제요건을 추가 정리
+        public Integer removeResult() {
+            if (saveList.isEmpty()) {
+                return null;
+            } else {
+                return saveList.remove(0);
+            }
+        }
  }
