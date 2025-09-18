@@ -25,7 +25,7 @@ public class App {
             System.out.println("=============================="); // 배열 구분선 추가
             // 저장된 결과값을 보여주는 배열을 하단에 첨부 getter 기능을 활용
             System.out.println("저장된 결과값: " + arithmeticCalculator.getSaveList());
-            System.out.print("명령어를 입력하세요. ( y=초기화면 | del=삭제 | big=큰 값 조회 | exit=종료 ) : ");
+            System.out.print("명령어를 입력하세요. ( y=계속진행 | del=삭제 | big=큰 값 조회 | avg=평균값 조회 | sum=평균값 조회 | exit=종료 ) : ");
 
             // 삭제 기능 추가 및 종료 조건을 만족하기 위해 항상 입력값을 고르게 입력 받아야 하므로 LowerCase(소문자로 치환), trim(공백 제거) 사용
             String choice = sc.next().toLowerCase().trim();
@@ -45,6 +45,12 @@ public class App {
                     System.out.print("기준값을 입력하세요: ");
                     double scNumStandard = sc.nextDouble();
                     arithmeticCalculator.compareLargeNumPrint(scNumStandard);
+                    break;
+                case "avg":
+                    arithmeticCalculator.averageResult();
+                    break;
+                case "sum":
+                    arithmeticCalculator.sumResult();
                     break;
                 case "exit":
                     exit = false;
