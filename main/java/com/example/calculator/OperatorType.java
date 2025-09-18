@@ -2,7 +2,20 @@ package com.example.calculator;
 
 // 사칙연산을 처리할 Enum 타입
 public enum OperatorType {
-    ADD, SUBTRACT, MULTIPLY, DIVIDE
+    ADD, SUBTRACT, MULTIPLY, DIVIDE;
+
+    /* App.java에서 입력받은 사칙연산 값을 변환하는 메서드 추가
+    (문제 요건에서는 charAt()을 사용하도록 유도했으므로 char 기준으로 작업 진행)
+     */
+    public static OperatorType fromChar(char c) {
+        switch(c) {
+            case '+': return ADD; // + 가 입력되었을 때 ADD 상수 반환
+            case '-': return SUBTRACT; // - 가 입력되었을 때 ADD 상수 반환
+            case '*': return MULTIPLY; // * 가 입력되었을 때 ADD 상수 반환
+            case '/': return DIVIDE; // / 가 입력되었을 때 ADD 상수 반환
+            default: throw new IllegalArgumentException("지원하지 않는 연산자입니다!");
+        }
+    }
 }
 
 /*
