@@ -27,7 +27,7 @@ public class ArithmeticCalculator<T extends Number> {
                 break;
             case DIVIDE:
                 if (b == 0) {
-                    throw new ArithmeticException("0을 나누거나 0으로 나눌 수 없습니다!");
+                    throw new ArithmeticException("0으로 나눌 수 없습니다!");
                 }
                 result = a / b;
                 break;
