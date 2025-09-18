@@ -37,6 +37,7 @@ public class ArithmeticCalculator<T extends Number> {
         saveList.add(result);
         return result;
     }
+
     // 생성자 (결과값 반환 및 배열 저장)
     public List<Double> getSaveList() {
         return saveList;
@@ -51,13 +52,19 @@ public class ArithmeticCalculator<T extends Number> {
     }
 
     // 입력받은 값보다 큰 값 출력 메서드
-    public List<Double> compareLargeNumPrint (double scNumStandard) {
-        return saveList.stream()
+    public List<Double> compareLargeNumPrint(double scNumStandard) {
+        List<Double> largeFilter = saveList.stream()
                 .filter(v -> v > scNumStandard) // 람다식 활용 scNumStandard(기준값 = 입력받은 값을 기준으로)
                 .sorted()
                 .toList();
+        if (saveList.isEmpty()) {
+            System.out.println("히스토리가 비어 있습니다.");
+        } else if (largeFilter.isEmpty()) {
+            System.out.println("기준값보다 큰 값이 없습니다.");
+        } else {
+            System.out.println("기준값 보다 큰 값은 " + largeFilter + "입니다.");
+        }
+        return largeFilter;
     }
 }
-
-
 
