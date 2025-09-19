@@ -1,6 +1,10 @@
 # Calculator
 JAVA 문법 종합반 계산기 과제 레포지토리입니다.<br>
 
+### 사용된 기술
+<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white">
+
+
 ## 필수기능
 ### Lv 1 : 클래스 없이 기본적인 연산을 수행할 수 있는 계산기 만들기
 <ul>양의 정수(0 포함)를 입력받기</ul>
