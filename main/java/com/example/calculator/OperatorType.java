@@ -1,8 +1,28 @@
 package com.example.calculator;
 
+import java.util.function.DoubleBinaryOperator;
+
 // 사칙연산을 처리할 Enum 타입
 public enum OperatorType {
-    ADD, SUBTRACT, MULTIPLY, DIVIDE;
+    // enum 내 사칙연산을 람다식으로 직접 구현
+    ADD((a, b) -> a + b),
+    SUBTRACT((a, b) -> a - b),
+    MULTIPLY((a, b) -> a * b),
+    DIVIDE((a, b) -> {
+        if (b==0) throw new ArithmeticException("0으로 나눌 수 없습니다.");
+        return a / b;
+    });
+
+    private final DoubleBinaryOperator operator;
+
+    OperatorType(DoubleBinaryOperator operator) {
+        this.operator = operator;
+    }
+
+    // 연산처리 진행 및 값을 반환시켜줄 메서드 생성
+    public double apply(double a, double b) {
+        return operator.applyAsDouble(a, b);
+    }
 
     /* App.java에서 입력받은 사칙연산 값을 변환하는 메서드 추가
     (문제 요건에서는 charAt()을 사용하도록 유도했으므로 char 기준으로 작업 진행)

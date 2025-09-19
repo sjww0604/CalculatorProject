@@ -10,38 +10,22 @@ public class ArithmeticCalculator<T extends Number> {
     // 속성
     private List<Double> saveList = new ArrayList<>(); // 배열 값을 저장하는 객체 생성
 
+    public List<Double> getSaveList() { // 저장값을 얻은 배열을 저장하는 getter 생성
+        return saveList;
+    }
+
+    public void addResult(double result) {
+        saveList.add(result);
+    } // 결과값을 배열에 저장
+
+
     public double calculate(T firstNum, T secondNum, OperatorType operatorType) {
         double a = firstNum.doubleValue();
         double b = secondNum.doubleValue();
-        double result;
-
-            switch (operatorType) {
-                case ADD:
-                    result = a + b;
-                    break;
-                case SUBTRACT:
-                    result = a - b;
-                    break;
-                case MULTIPLY:
-                    result = a * b;
-                    break;
-                case DIVIDE:
-                    if (b == 0) {
-                        throw new ArithmeticException("0으로 나눌 수 없습니다!");
-                    }
-                    result = a / b;
-                    break;
-                default:
-                    throw new IllegalArgumentException("지원하지 않는 연산자입니다.");
-            }
-            saveList.add(result);
-            return result;
-        }
-
-        // 생성자 (결과값 반환 및 배열 저장)
-        public List<Double> getSaveList () {
-            return saveList;
-        }
+        double result = operatorType.apply(a, b); // 결과값에는 연산처리가 적용된 값을 result에 넣어줌
+        saveList.add(result);
+        return result;
+    }
 
         // 기능 (초기값 삭제기능 유지)
         public Double removeResult () {
